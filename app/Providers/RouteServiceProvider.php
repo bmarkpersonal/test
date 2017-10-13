@@ -94,6 +94,7 @@ class RouteServiceProvider extends ServiceProvider
             }
             $v[] = Route::$methodRoute($value['resource_url'], $value['resource_action']);
         }
+        //ресурсы пока не будут работать, для них прийдется дополнить код...в целом можно обойтись и без них но с ними убоднее и быстрее...
         return $v;
     }
 }

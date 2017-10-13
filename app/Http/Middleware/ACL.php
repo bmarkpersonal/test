@@ -22,8 +22,8 @@ class ACL
 
      public function handle($request, Closure $next, $guard = null)
     {
-        dd($thisResource = $request->route()->getAction());
-        return $next($request);
+        //dd($thisResource = $request->route()->getAction());
+        //return $next($request);
         //$user = Auth::user();
         $userRoles=User::find(1)->roles()->get()->toArray();
         $thisResource = $request->route()->getAction();
@@ -39,9 +39,9 @@ class ACL
        
         //$userResources = $resource->resources()->get();
         if($search) {
-            return $next($request);
+            return $next($request);//пускаем
         } else {
-           return redirect('/');
+           return redirect('/');//редиректим
         }
        
     }
